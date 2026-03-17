@@ -1,0 +1,506 @@
+.app-shell {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+  display: grid;
+  gap: 24px;
+}
+
+.hero-panel,
+.section-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(10, 19, 31, 0.9), rgba(7, 12, 22, 0.96));
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 24px;
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 32px;
+  position: relative;
+}
+
+.hero-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -30% auto;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(106, 227, 255, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.section-kicker,
+.planner-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--accent-strong);
+  margin: 0 0 12px;
+}
+
+.hero-text {
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-content: start;
+}
+
+.hero-stats article,
+.forecast-card,
+.compare-card,
+.country-card,
+.planner-panel {
+  border: 1px solid rgba(161, 187, 220, 0.14);
+  background: linear-gradient(180deg, rgba(19, 28, 45, 0.92), rgba(11, 17, 29, 0.92));
+  border-radius: 20px;
+}
+
+.hero-stats article {
+  padding: 18px;
+}
+
+.hero-stats span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  color: var(--text-strong);
+  margin-bottom: 6px;
+}
+
+.hero-stats p {
+  color: var(--muted);
+}
+
+.section-card {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.section-heading,
+.planner-summary,
+.planner-toolbar,
+.controls,
+.card-actions,
+.compare-title,
+.panel-heading,
+.checklist-create {
+  display: flex;
+  gap: 16px;
+}
+
+.section-heading,
+.planner-summary {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.controls,
+.planner-toolbar,
+.card-actions,
+.checklist-create {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  min-width: 180px;
+}
+
+.controls label,
+.panel-heading,
+.planner-toolbar {
+  flex: 1;
+}
+
+.controls span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.country-grid,
+.compare-grid,
+.planner-grid,
+.forecast-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.country-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin-top: 22px;
+}
+
+.compare-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.planner-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.forecast-grid {
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+}
+
+.country-card,
+.compare-card,
+.planner-panel,
+.forecast-card {
+  padding: 18px;
+}
+
+.country-card {
+  display: grid;
+  gap: 16px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.country-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(106, 227, 255, 0.26);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.country-card-active {
+  outline: 1px solid rgba(106, 227, 255, 0.3);
+}
+
+.country-card-header,
+.compare-title {
+  align-items: center;
+}
+
+.country-card-header {
+  display: flex;
+  gap: 14px;
+}
+
+.country-card-header img,
+.compare-title img {
+  width: 54px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+.country-card-header p,
+.compare-title p,
+.panel-heading p,
+.compare-empty span,
+.planner-message {
+  color: var(--muted);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.stat-grid div,
+.compare-metrics li,
+.planner-badges span,
+.checklist-item {
+  border: 1px solid rgba(161, 187, 220, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+}
+
+.stat-grid div {
+  padding: 12px;
+}
+
+.stat-grid dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-grid dd {
+  margin: 8px 0 0;
+  color: var(--text-strong);
+  font-size: 0.95rem;
+}
+
+.compare-card {
+  min-height: 100%;
+}
+
+.compare-empty {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-style: dashed;
+}
+
+.compare-metrics {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.compare-metrics li {
+  padding: 13px 14px;
+}
+
+.compare-metrics strong,
+.compare-metrics span {
+  display: block;
+}
+
+.compare-metrics strong {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.planner-card {
+  overflow: hidden;
+}
+
+.planner-summary {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid rgba(161, 187, 220, 0.12);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(242, 173, 90, 0.18), transparent 35%),
+    rgba(255, 255, 255, 0.02);
+}
+
+.planner-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.planner-badges span {
+  padding: 10px 12px;
+  color: var(--text-strong);
+}
+
+.planner-panel-wide {
+  grid-column: 1 / -1;
+}
+
+.forecast-card {
+  text-align: center;
+  display: grid;
+  gap: 8px;
+}
+
+.forecast-card span {
+  font-size: 1.8rem;
+}
+
+.forecast-card p,
+.forecast-card small {
+  color: var(--muted);
+}
+
+.checklist-create {
+  margin-bottom: 16px;
+}
+
+.checklist-create input {
+  flex: 1;
+}
+
+.checklist-list {
+  display: grid;
+  gap: 12px;
+}
+
+.checklist-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+.checklist-item span {
+  min-width: 0;
+}
+
+.empty-state {
+  margin-top: 20px;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px dashed rgba(161, 187, 220, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+}
+
+.error-state {
+  color: #ffb4b4;
+}
+
+.planner-message {
+  margin: 16px 0 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(161, 187, 220, 0.18);
+  background: rgba(7, 12, 22, 0.78);
+  color: var(--text-strong);
+  padding: 13px 14px;
+  box-sizing: border-box;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(106, 227, 255, 0.42);
+  box-shadow: 0 0 0 4px rgba(106, 227, 255, 0.14);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 11px 16px;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+.accent-button {
+  background: linear-gradient(135deg, #7cf0ff, #f2ad5a);
+  color: #051119;
+  font-weight: 700;
+}
+
+.accent-button.is-selected {
+  background: linear-gradient(135deg, #ffb26b, #7cf0ff);
+}
+
+.secondary-button,
+.ghost-button {
+  color: var(--text-strong);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(161, 187, 220, 0.16);
+}
+
+.ghost-button {
+  padding-inline: 12px;
+}
+
+@media (max-width: 1080px) {
+  .hero-panel,
+  .planner-grid,
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-badges {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: min(100% - 20px, 1280px);
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .hero-panel,
+  .section-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .planner-summary,
+  .checklist-item {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .controls,
+  .planner-toolbar,
+  .card-actions,
+  .checklist-create {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-panel-wide {
+    grid-column: auto;
+  }
+
+  .checklist-item {
+    gap: 10px;
+  }
+}
