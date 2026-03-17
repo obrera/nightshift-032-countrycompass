@@ -55,7 +55,7 @@ type WeatherState = {
 }
 
 const REST_COUNTRIES_URL =
-  'https://restcountries.com/v3.1/all?fields=cca3,name,flags,population,area,region,subregion,capital,languages,currencies,timezones'
+  'https://restcountries.com/v3.1/all?fields=cca3,name,flags,population,area,region,capital,languages,currencies,timezones'
 const STORAGE_KEY = 'country-compass-plans-v1'
 const plannerStarterItems = [
   'Passport and travel documents',
